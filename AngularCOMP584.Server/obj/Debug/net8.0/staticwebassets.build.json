@@ -1,0 +1,23 @@
+{
+  "Version": 1,
+  "Hash": "T/lZQZcz+WnfJyfhZZhH8GZVESc1L7hte0Ekg9Durqw=",
+  "Source": "AngularCOMP584.Server",
+  "BasePath": "_content/AngularCOMP584.Server",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [
+    {
+      "Identity": "C:\\Users\\chris\\Source\\Repos\\AngularCOMP584\\angularcomp584.client\\angularcomp584.client.esproj",
+      "Version": 2,
+      "Source": "angularcomp584.client",
+      "GetPublishAssetsTargets": "GetCurrentProjectPublishStaticWebAssetItems",
+      "AdditionalPublishProperties": "Configuration=Debug;Platform=AnyCPU",
+      "AdditionalPublishPropertiesToRemove": "WebPublishProfileFile;TargetFramework;RuntimeIdentifier;SelfContained",
+      "GetBuildAssetsTargets": "GetCurrentProjectBuildStaticWebAssetItems",
+      "AdditionalBuildProperties": "Configuration=Debug;Platform=AnyCPU",
+      "AdditionalBuildPropertiesToRemove": "WebPublishProfileFile;TargetFramework;RuntimeIdentifier;SelfContained"
+    }
+  ],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

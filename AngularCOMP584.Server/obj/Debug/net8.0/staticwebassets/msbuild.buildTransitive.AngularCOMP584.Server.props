@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\buildMultiTargeting\AngularCOMP584.Server.props" />
+</Project>

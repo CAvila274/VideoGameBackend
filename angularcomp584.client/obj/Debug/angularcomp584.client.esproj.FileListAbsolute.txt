@@ -1,0 +1,2 @@
+C:\Users\cja71859\source\repos\AngularCOMP584\angularcomp584.client\obj\Debug\angularcomp584.client.esproj.CoreCompileInputs.cache
+C:\Users\chris\Source\Repos\AngularCOMP584\angularcomp584.client\obj\Debug\angularcomp584.client.esproj.CoreCompileInputs.cache
