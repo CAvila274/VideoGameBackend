@@ -12,9 +12,9 @@ using System;
 using System.Reflection;
 
 [assembly: System.Reflection.AssemblyCompanyAttribute("AngularCOMP584.Server")]
-[assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
+[assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f71a4a81ffba684127d2e465f192a9f95e992d09")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+94816abaa293386b4ad8e939891cdda37211142c")]
 [assembly: System.Reflection.AssemblyProductAttribute("AngularCOMP584.Server")]
 [assembly: System.Reflection.AssemblyTitleAttribute("AngularCOMP584.Server")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
