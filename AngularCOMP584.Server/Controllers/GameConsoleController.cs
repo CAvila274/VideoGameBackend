@@ -9,6 +9,7 @@ using DataModel;
 using System.Runtime;
 using AngularCOMP584.Server.DTO;
 using AngularCOMP584.Server.Models2;
+using DataModel.NewFolder;
 
 namespace AngularCOMP584.Server.Controllers
 {
@@ -16,58 +17,109 @@ namespace AngularCOMP584.Server.Controllers
     [ApiController]
     public class GameConsoleController(DataBaseWrapperContext dataBaseWrapperContext) : ControllerBase
     {
-        //private readonly MycitiesContext _context = context;
+        
         private readonly DataBaseWrapperContext _dataBaseWrapperContext = dataBaseWrapperContext;
-        // GET: api/Cities
+        // GET: api/GameConsole
         [HttpGet("get")]
-        //public async Task<GameConsole> GetCities()
+        
          public async Task<IEnumerable<GameConsole>> GetCities()
         {
-        //GameConsole ourTable = await _dataBaseWrapperContext.testMyDBContext();
+       
 
          return await _dataBaseWrapperContext.gameConsoleDBSet.ToListAsync();
 
-        //IQueryable<GameConsole> x = _context.Cities.Select(c => new GameConsole
-        //{
-        //    Id = c.Id,
-        //    Name = c.Name,
-        //    ReleaseDate=c.ReleaseDate
-
-        //}).Take(100);
-
-
-
-        // return ourTable;
 
          }
 
-        // POST: /api/Cities
+        // POST: /api/GameConsole
         [HttpPost]
         public async Task<ActionResult<GameConsole>> PostGameConsole(GameConsole gameConsole)
         {
-            // Add the new game console to the DbSet
+            
             _dataBaseWrapperContext.gameConsoleDBSet.Add(gameConsole);
             try
             {
-                // Save changes to the database
+                
                 await _dataBaseWrapperContext.SaveChangesAsync();
             }
             catch (DbUpdateException)
             {
-                // Check if the game console already exists (if you have a unique constraint on Id)
+                
                 if (GameConsoleExists(gameConsole.Id))
                 {
-                    return Conflict(); // Return a conflict status if it does
+                    return Conflict(); 
                 }
                 else
                 {
-                    throw; // Rethrow the exception if it is not a conflict
+                    throw; 
                 }
             }
 
-            // Return the created game console with a 201 Created response
+            
             return CreatedAtAction("GetGameConsole", new { id = gameConsole.Id }, gameConsole);
         }
+
+        // /api/GameConsole/whatever
+
+        [HttpGet("whatever")]
+        public async Task<ActionResult<WhateverViewModel>> asdf()
+        {
+            WhateverViewModel w = new WhateverViewModel();
+            w.id = 3;
+            w.name = "jon";
+
+            return w;
+        }
+
+
+
+        // /api/GameConsole/post
+        [HttpPost("post")]
+        public async Task<ActionResult<GameConsole>> PostGameConsole(GameConsoleDTO gameConsoleDTO)
+        {
+            // Map DTO to entity
+            var gameConsole = new GameConsole
+            {
+                Id = gameConsoleDTO.Id, 
+                Name = gameConsoleDTO.Name,
+                ReleaseDate = gameConsoleDTO.ReleaseDate,
+                CompanyId = gameConsoleDTO.CompanyId,
+                IsCrossPlatform = gameConsoleDTO.IsCrossPlatform,
+                ConsoleType = gameConsoleDTO.ConsoleType
+                
+            };
+
+            
+            _dataBaseWrapperContext.gameConsoleDBSet.Add(gameConsole);
+
+            try
+            {
+               
+                await _dataBaseWrapperContext.SaveChangesAsync();
+            }
+            catch (DbUpdateException)
+            {
+                
+                if (GameConsoleExists(gameConsole.Id))
+                {
+                    return Conflict(); 
+                }
+                else
+                {
+                    throw; 
+                }
+            }
+
+            
+            return CreatedAtAction("GetGameConsole", new { id = gameConsole.Id }, gameConsole);
+        }
+
+
+
+
+
+
+
 
         [HttpGet("{id}")]
         public async Task<ActionResult<GameConsole>> GetGameConsole(int id)
@@ -95,6 +147,36 @@ namespace AngularCOMP584.Server.Controllers
 
             return gameConsole;
         }
+
+        [HttpPut("{id}")]
+        public async Task<IActionResult> PutGameConsole(int id, GameConsole gameconsole)
+        {
+            if (id != gameconsole.Id)
+            {
+                return BadRequest();
+            }
+
+            _dataBaseWrapperContext.Entry(gameconsole).State = EntityState.Modified;
+
+            try
+            {
+                await _dataBaseWrapperContext.SaveChangesAsync();
+           }
+            catch (DbUpdateConcurrencyException)
+            {
+                if (!GameConsoleExists(id))
+                {
+                    return NotFound();
+                }
+                else
+                {
+                    throw;
+                }
+            }
+
+            return NoContent();
+        }
+
 
 
         [HttpDelete("{id}")]

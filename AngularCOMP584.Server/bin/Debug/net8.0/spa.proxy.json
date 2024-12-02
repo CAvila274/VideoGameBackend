@@ -3,7 +3,7 @@
 "ServerUrl": "https://localhost:4200",
 "RedirectUrl": "",
 "LaunchCommand": "npm start",
-"WorkingDirectory": "C:\\Users\\chris\\Source\\Repos\\AngularCOMP584\\AngularCOMP584.Server\\..\\angularcomp584.client",
+"WorkingDirectory": "C:\\Users\\chris\\source\\COMP584-Project\\Backend\\VideoGameBackend\\AngularCOMP584.Server\\..\\angularcomp584.client",
 "MaxTimeoutInSeconds": "120",
 "KeepRunning": "false"
 }

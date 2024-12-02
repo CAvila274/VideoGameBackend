@@ -1,13 +1,13 @@
 {
   "Version": 1,
-  "Hash": "T/lZQZcz+WnfJyfhZZhH8GZVESc1L7hte0Ekg9Durqw=",
+  "Hash": "fgNd/JhKObX+5v84Jz7SQ7BT3LAzTvP5ah6pOr5bZXM=",
   "Source": "AngularCOMP584.Server",
   "BasePath": "_content/AngularCOMP584.Server",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [
     {
-      "Identity": "C:\\Users\\chris\\Source\\Repos\\AngularCOMP584\\angularcomp584.client\\angularcomp584.client.esproj",
+      "Identity": "C:\\Users\\chris\\source\\COMP584-Project\\Backend\\VideoGameBackend\\angularcomp584.client\\angularcomp584.client.esproj",
       "Version": 2,
       "Source": "angularcomp584.client",
       "GetPublishAssetsTargets": "GetCurrentProjectPublishStaticWebAssetItems",
